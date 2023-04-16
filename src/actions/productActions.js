@@ -9,8 +9,6 @@ import {
   PRODUCT_DETAILS_SUCCESS,
 } from "./types";
 
-const url = "http://localhost:5000";
-
 // Get all products
 export const getProducts =
   (keyword = "", currentPage = 1, price, category, rating = 0) =>
@@ -18,10 +16,10 @@ export const getProducts =
     try {
       dispatch({ type: ALL_PRODUCTS_REQUEST });
 
-      let link = `${url}/api/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}`;
+      let link = `/api/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}`;
 
       if (category) {
-        link = `${url}/api/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category=${category}&ratings[gte]=${rating}`;
+        link = `/api/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&category=${category}&ratings[gte]=${rating}`;
       }
 
       const { data } = await axios.get(link);
@@ -49,7 +47,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`${url}/api/product/${id}`);
+    const { data } = await axios.get(`/api/product/${id}`);
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
