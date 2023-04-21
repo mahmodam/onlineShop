@@ -39,7 +39,7 @@ const Shipping = () => {
 
     alert.success("Shipping info saved successfully");
 
-    navigate("/confirm");
+    navigate("/order/confirm");
   };
 
   return (
