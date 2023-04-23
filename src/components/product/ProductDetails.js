@@ -149,7 +149,7 @@ const ProductDetails = () => {
           variant="warning"
         ></Spinner>
       ) : (
-        <Container>
+        <Container className="mt-5">
           <Row>
             <Col md={6}>
               <Carousel pause="hover">

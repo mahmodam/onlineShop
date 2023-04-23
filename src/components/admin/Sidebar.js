@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar-wrapper">
       <nav id="sidebar">
-        <ul className="list-unstyled components">
+        <ul className="list-unstyled components mt-5">
           <li>
             <Link to="/dashboard">
               <i className="fa fa-tachometer"></i> Dashboard

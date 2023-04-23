@@ -28,7 +28,7 @@ const Product = ({ product }) => {
     //   </Card.Body>
     // </Card>
 
-    <div className="card p-3 rounded">
+    <div className="card p-3 rounded mt-5">
       <img
         className="card-img-top mx-auto"
         src={product.images[0].url}
