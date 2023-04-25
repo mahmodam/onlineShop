@@ -49,6 +49,10 @@ const OrdersList = () => {
     }
   }, [dispatch, alert, error, navigate, isDeleted]);
 
+  const deleteOrderHandler = (id) => {
+    dispatch(deleteOrder(id));
+  };
+
   const setOrders = () => {
     const data = {
       columns: [
@@ -113,10 +117,6 @@ const OrdersList = () => {
     });
 
     return data;
-  };
-
-  const deleteOrderHandler = (id) => {
-    dispatch(deleteOrder(id));
   };
 
   return (

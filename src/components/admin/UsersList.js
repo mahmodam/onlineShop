@@ -45,6 +45,10 @@ const UsersList = () => {
     }
   }, [dispatch, alert, error, navigate, isDeleted]);
 
+  const deleteUserHandler = (id) => {
+    dispatch(deleteUser(id));
+  };
+
   const setUsers = () => {
     const data = {
       columns: [
@@ -94,7 +98,7 @@ const UsersList = () => {
             /
             <Button
               className="btn btn-danger py-1 px-2 ml-2"
-              onClick={() => deleteOrderHandler(user._id)}
+              onClick={() => deleteUserHandler(user._id)}
             >
               <i className="fa fa-trash"></i>
             </Button>
@@ -106,9 +110,6 @@ const UsersList = () => {
     return data;
   };
 
-  const deleteOrderHandler = (id) => {
-    dispatch(deleteUser(id));
-  };
   return (
     <Fragment>
       <MetaData title={"All Users"} />

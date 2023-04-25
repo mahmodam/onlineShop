@@ -56,6 +56,10 @@ const ProductsList = () => {
     }
   }, [dispatch, alert, error, deleteError, isDeleted, navigate]);
 
+  const deleteProductHandler = (id) => {
+    dispatch(deleteProduct(id));
+  };
+
   const setProducts = () => {
     const data = {
       columns: [
@@ -114,10 +118,6 @@ const ProductsList = () => {
     });
 
     return data;
-  };
-
-  const deleteProductHandler = (id) => {
-    dispatch(deleteProduct(id));
   };
 
   return (
